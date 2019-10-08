@@ -1,29 +1,46 @@
-# CVICENI 1
-SET PASSWORD for 'root'@'localhost' = password('root');
-SET PASSWORD for 'root'@'127.0.0.1' = password('root');
-SET PASSWORD for 'root'@'::1' = password('root');
-SELECT * FROM users;
-SELECT COUNT(*) FROM users;
-SET name;
+﻿-- Adminer 4.6.3 MySQL dump
 
-# CVICENI 2
+SET NAMES utf8;
+SET time_zone = '+00:00';
+SET foreign_key_checks = 0;
+SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 
-CREATE DATABASE name;
-CREATE TABLE table_name ();
-INSERT INTO students (
- firstname,
- lastname,
- description,
- address,
- city,
- birthdate,
-)
-VALUES (
- 'Mat�j'
- 'Dalekorej'
- 'Lenoch kterej chce jen hr�t hry'
- 'Kluk U Sadu 227'
- 'Pod�brady'
- '2002-03-18'
-);
+CREATE DATABASE `skola` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_czech_ci */;
+USE `skola`;
 
+DROP TABLE IF EXISTS `students`;
+CREATE TABLE `students` (
+  `id_student` int(11) NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(255) COLLATE utf8_czech_ci DEFAULT NULL,
+  `lastname` varchar(255) COLLATE utf8_czech_ci DEFAULT NULL,
+  `description` text COLLATE utf8_czech_ci,
+  `adress` varchar(255) COLLATE utf8_czech_ci DEFAULT NULL,
+  `city` varchar(255) COLLATE utf8_czech_ci DEFAULT NULL,
+  `birthdate` date DEFAULT NULL,
+  PRIMARY KEY (`id_student`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+INSERT INTO `students` (`id_student`, `firstname`, `lastname`, `description`, `adress`, `city`, `birthdate`) VALUES
+(1,	'Matěj',	'Kneifl',	'Hraje tyfko',	'V baráku 123',	'Křečhoř',	'2002-10-18');
+
+DROP TABLE IF EXISTS `subjects`;
+CREATE TABLE `subjects` (
+  `id_subject` int(11) DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8_czech_ci DEFAULT NULL,
+  `description` text COLLATE utf8_czech_ci,
+  `shortcut` varchar(255) COLLATE utf8_czech_ci DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_czech_ci;
+
+INSERT INTO `subjects` (`id_subject`, `name`, `description`, `shortcut`) VALUES
+(NULL,	'Anglický jazyk',	'Výuka cizího jazyka',	'Aj'),
+(NULL,	'Matematika',	'Nauka matematiky',	'M'),
+(NULL,	'Český jazyk',	'Výuka českého jazyka',	'Čj'),
+(NULL,	'Počítačová grafika',	'Nauka grafických programů na počítačích',	'PG'),
+(NULL,	'Databáze',	'Nauka o práci a správě databází',	'Da');
+
+INSERT INTO `teachers` (`firstname`, `lastname`, `birthdate`, `address`, `description`, `city`, `id_teacher`) VALUES
+('Jan',	'Klíma',	'1985-05-05',	'Na Vavřínech',	'Učitel grafiky',	'Žehuň',	NULL),
+('Martin',	'Kokeš',	'1988-01-01',	'Železnická 162',	'Učitel IT',	'Kolín',	NULL),
+('Naděžda',	'Rytířová',	'1965-03-27',	'U Masny 32',	'Uspávačka hadů',	'Kolín',	NULL);
+
+-- 2019-10-08 08:55:17
