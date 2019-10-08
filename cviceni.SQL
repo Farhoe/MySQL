@@ -44,3 +44,21 @@ INSERT INTO `teachers` (`firstname`, `lastname`, `birthdate`, `address`, `descri
 ('Naděžda',	'Rytířová',	'1965-03-27',	'U Masny 32',	'Uspávačka hadů',	'Kolín',	NULL);
 
 -- 2019-10-08 08:55:17
+
+DROP TABLE IF EXISTS `classrooms`;
+CREATE TABLE `classrooms` (
+  `id_classroom` int(11) NOT NULL AUTO_INCREMENT,
+  `class_number` varchar(255) COLLATE utf8_bin NOT NULL,
+  `seats` int(11) NOT NULL,
+  `location` varchar(255) COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id_classroom`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+INSERT INTO `classrooms` (`id_classroom`, `class_number`, `seats`, `location`) VALUES
+(1,	'19',	13,	'první budova'),
+(2,	'8',	20,	'druhá budova'),
+(3,	'6a',	30,	'první budova'),
+(4,	'6b',	25,	'první budova'),
+(5,	'13',	50,	'druhá budova');
+
+-- 2019-10-08 10:09:13
