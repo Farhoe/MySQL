@@ -62,3 +62,15 @@ INSERT INTO `classrooms` (`id_classroom`, `class_number`, `seats`, `location`) V
 (5,	'13',	50,	'druhá budova');
 
 -- 2019-10-08 10:09:13
+CREATE TABLE schedule(
+ id_schedule int(11) NOT NULL AUTO_INCREMENT,
+ id_teacher int(11) NOT NULL,
+ id_class int(11) NOT NULL,
+ id_subject int(11) NOT NULL,
+ id_classroom int(11) NOT NULL,
+ id_lesson int(11) NOT NULL,
+ description TEXT,
+ PRIMARY KEY (id_schedule)
+)
+
+-- 2019-11-5 11:38:30
