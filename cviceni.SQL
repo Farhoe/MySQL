@@ -74,3 +74,11 @@ CREATE TABLE schedule(
 )
 
 -- 2019-11-5 11:38:30
+
+SELECT boo.id_book AS 'Číslo Knihy', boo.title AS 'Název',CONCAT(aut.firstname, ' ', aut.lastname) As 'Jméno Autora', pub.name AS 'Nakladatelství', gen.name AS 'Žánr'
+FROM books boo
+JOIN author aut ON boo.id_author = aut.id_author
+JOIN genre gen ON boo.id_genre = gen.id_genre
+JOIN publisher pub ON boo.id_publisher = pub.id_publisher;
+
+-- 2019-12-10 15:19:45
