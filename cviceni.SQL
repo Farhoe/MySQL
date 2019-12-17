@@ -82,3 +82,10 @@ JOIN genre gen ON boo.id_genre = gen.id_genre
 JOIN publisher pub ON boo.id_publisher = pub.id_publisher;
 
 -- 2019-12-10 15:19:45
+
+SELECT *
+FROM books b
+JOIN book_genre b_g ON b.id_book = b_g.id_book
+JOIN genre g ON g.id_genre = b_g.id_genre
+
+-- 2019-12-17 11:43:20
