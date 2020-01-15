@@ -89,6 +89,8 @@ JOIN book_genre b_g ON b.id_book = b_g.id_book
 JOIN genre g ON g.id_genre = b_g.id_genre
 
 -- 2019-12-17 11:43:20
+ossp_wars
+---------------
 
 DROP TABLE IF EXISTS `characters`;
 CREATE TABLE `characters` (
