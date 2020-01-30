@@ -201,3 +201,11 @@ INSERT INTO `units` (`id_unit`, `id_unit_type`, `hp`, `damage`, `id_character`) 
 (8,	8,	5,	5,	6);
 
 -------------------------------------------
+
+SELECT play.id_guild AS 'číslo guildy', play.nickname AS 'Jméno', play.created_at AS 'Vytvořeno' 
+FROM players play
+JOIN guilds g ON g.id_guild
+ORDER BY nazev_guildy;
+
+9:25:00
+-----------------------------------------------------------------
