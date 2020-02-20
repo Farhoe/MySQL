@@ -207,5 +207,10 @@ FROM players play
 JOIN guilds g ON g.id_guild
 ORDER BY nazev_guildy;
 
+//*Výpis s hráčem bez guildy  *//
+SELECT COALESCE(g.id_guild, "Nevyplněno") AS "ID guildy", p.id_player AS "ID hráče", g.name AS "Jméno", g.created_at AS "Vytvořeno:", p.nickname AS "Nickname"
+FROM guilds g
+RIGHT JOIN players p ON g.id_guild = p.id_guild;
+
 9:25:00
 -----------------------------------------------------------------
