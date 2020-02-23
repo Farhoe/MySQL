@@ -200,7 +200,7 @@ INSERT INTO `units` (`id_unit`, `id_unit_type`, `hp`, `damage`, `id_character`) 
 (7,	7,	70,	70,	3),
 (8,	8,	5,	5,	6);
 
--------------------------------------------
+----------------------------------------------------------------
 
 SELECT play.id_guild AS 'číslo guildy', play.nickname AS 'Jméno', play.created_at AS 'Vytvořeno' 
 FROM players play
@@ -214,3 +214,11 @@ RIGHT JOIN players p ON g.id_guild = p.id_guild;
 
 9:25:00
 -----------------------------------------------------------------
+
+SELECT uni.id_unit AS "Číslo Jednotky", uni.id_unit_type AS "Druh Jednotky", uni.hp AS "Zdraví", uni.damage AS "Poškození", uni.id_character AS "Název Charakteru"
+FROM units uni
+INNER JOIN unit_types unity ON uni.id_unit_type = unity.id_unit_type
+INNER JOIN characters cha ON uni.id_character = cha.id_character;
+
+19:20:50
+----------------------------------------------------------------
