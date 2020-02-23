@@ -217,8 +217,10 @@ RIGHT JOIN players p ON g.id_guild = p.id_guild;
 
 SELECT uni.id_unit AS "Číslo Jednotky", uni.id_unit_type AS "Druh Jednotky", uni.hp AS "Zdraví", uni.damage AS "Poškození", uni.id_character AS "Název Charakteru"
 FROM units uni
-INNER JOIN unit_types unity ON uni.id_unit_type = unity.id_unit_type
-INNER JOIN characters cha ON uni.id_character = cha.id_character;
+JOIN unit_types unity ON uni.id_unit_type = unity.id_unit_type
+JOIN characters cha ON uni.id_character = cha.id_character
+JOIN players play ON uni.id_player = play.id_player
+JOIN guilds guild ON uni.id_guild = guild.id_guild;
 
 19:20:50
 ----------------------------------------------------------------
