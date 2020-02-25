@@ -215,7 +215,7 @@ RIGHT JOIN players p ON g.id_guild = p.id_guild;
 9:25:00
 -----------------------------------------------------------------
 
-SELECT u.id_unit AS "Číslo Jednotky", u_t.id_unit_type AS "Druh Jednotky", u.hp AS "Zdraví", u.damage AS "Poškození", ch.id_character AS "Název Charakteru", p.id_player AS "Jméno Hráče", g.id_guild AS "Název Guildy"
+SELECT u.id_unit AS "Číslo Jednotky", u_t.name AS "Druh Jednotky", u.hp AS "Zdraví", u.damage AS "Poškození", ch.name AS "Název Charakteru", p.nickname AS "Jméno Hráče", g.name AS "Název Guildy"
 FROM units u
 JOIN unit_types u_t ON u.id_unit_type = u_t.id_unit_type
 JOIN characters ch ON ch.id_character = u.id_character
